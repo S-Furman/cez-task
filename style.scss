@@ -1,0 +1,54 @@
+$primaryColor: #0275d8;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.input-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 25px;
+  border-radius: 35px;
+  background-color: #ccc;
+  cursor: pointer;
+  transition: background-color 0.5s;
+
+  &::before {
+    content: "Nie";
+    position: absolute;
+    left: 25px;
+    color: white;
+  }
+
+  .circle {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 5px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.5s;
+  }
+}
+
+#checkbox:checked ~ .custom-checkbox {
+  background-color: $primaryColor;
+
+  &::before {
+    transform: translate(-15px);
+    content: "Tak";
+  }
+
+  .circle {
+    transform: translate(35px);
+  }
+}

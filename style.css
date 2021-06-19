@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.input-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.custom-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60px;
+  height: 25px;
+  border-radius: 35px;
+  background-color: #ccc;
+  cursor: pointer;
+  -webkit-transition: background-color 0.5s;
+  transition: background-color 0.5s;
+}
+
+.custom-checkbox::before {
+  content: "Nie";
+  position: absolute;
+  left: 25px;
+  color: white;
+}
+
+.custom-checkbox .circle {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 5px;
+  background-color: white;
+  border-radius: 50%;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+#checkbox:checked ~ .custom-checkbox {
+  background-color: #0275d8;
+}
+
+#checkbox:checked ~ .custom-checkbox::before {
+  -webkit-transform: translate(-15px);
+          transform: translate(-15px);
+  content: "Tak";
+}
+
+#checkbox:checked ~ .custom-checkbox .circle {
+  -webkit-transform: translate(35px);
+          transform: translate(35px);
+}
+/*# sourceMappingURL=style.css.map */
